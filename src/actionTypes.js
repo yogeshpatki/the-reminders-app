@@ -1,0 +1,2 @@
+export const COMPONENT_ONE = "COMPONENT_ONE";
+export const COMPONENT_TWO = "COMPONENT_TWO";

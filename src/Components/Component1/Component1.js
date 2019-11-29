@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const Component1 = () => {
+// Redux and Actions
+import { connect } from "react-redux";
+import { componentOneAction } from "../../Actions/componentOneActions";
+
+// CSS
+import "./Component1.scss";
+
+const Component1 = props => {
+	useEffect(() => {
+		props.componentOneAction();
+	}, []);
 	return (
 		<div>
-			<h1>Component 1</h1>
+			<h1>Hello from {props.text}</h1>
 		</div>
 	);
 };
 
-export default Component1;
+const mapStateToProps = state => ({
+	text: state.componentOne.text
+});
+
+export default connect(mapStateToProps, { componentOneAction })(Component1);

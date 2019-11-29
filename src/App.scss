@@ -1,0 +1,17 @@
+.navbar-nav {
+	flex-direction: row;
+
+	li {
+		margin-left: 1rem;
+	}
+}
+
+footer {
+	background: #343a40;
+	padding: 0.5rem;
+
+	a,
+	a:hover {
+		color: #fff;
+	}
+}

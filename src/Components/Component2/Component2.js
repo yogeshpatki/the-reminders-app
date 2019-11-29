@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const Component2 = () => {
+// Redux and Actions
+import { connect } from "react-redux";
+import { componentTwoAction } from "../../Actions/componentTwoActions";
+
+// CSS
+import "./Component2.scss";
+
+const Component2 = props => {
+	useEffect(() => {
+		props.componentTwoAction();
+	}, []);
 	return (
 		<div>
-			<h1>Component 2</h1>
+			<h1>Hello from {props.text}</h1>
 		</div>
 	);
 };
 
-export default Component2;
+const mapStateToProps = state => ({
+	text: state.componentTwo.text
+});
+
+export default connect(mapStateToProps, { componentTwoAction })(Component2);
